@@ -13,11 +13,11 @@ class LinkedList {
             value
         };
 
-        if (index == 0) {
+        //if inserting into head redefines that new node is the head
+        if (index == 0) { 
             newNode.next = this.head;
             this.head = newNode;
-        }
-        else {
+        } else {
             // Find the node which we want to insert after
             const node = this._find(index - 1);
             newNode.next = node.next;
@@ -32,6 +32,7 @@ class LinkedList {
         for (let i=0; i<index; i++) {
             node = node.next;
         }
+
         return node;
     }
 
@@ -60,5 +61,6 @@ class LinkedList {
         this.length--;
     }
 }
+
 
 module.exports = LinkedList;
